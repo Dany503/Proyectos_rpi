@@ -1,0 +1,49 @@
+sitemap Test label="Menu"
+{
+    
+Frame label="Luces" 
+    {
+    Switch item=mqttsw1 label="LED 1"    
+    Switch item=mqttsw2 label="LED 2"
+    Switch item=mqttsw3 label="LED 3"
+    Colorpicker item=LuzRGB icon="slider"
+    Slider item=DimmedLight switchSupport
+	}
+	
+Frame label="Servos" 
+    {	
+	Switch item=servo label="Servo 1"
+	}
+	
+Frame label="Sensor BMP180"
+	{
+	Text item=temp valuecolor=[>30="red", >25="orange", >15="green", <15="blue"] 
+    Text item=press
+    }
+    
+Frame label="Sensor PAC1720"
+	{
+	Text item=volts 
+    Text item=amps
+    Text item=watts 
+    Text item=wattshour
+	}
+    
+Frame label="Cámaras IP" {
+		
+		Text label="PICamera" icon="camera" {
+			Frame label="Cámara 1" {
+       		Video url="http://192.168.1.3:8081/?action=stream" encoding="mjpeg"
+          }		
+		}
+		
+		Text label="Móvil" icon="camera" {
+			Frame label="Cámara 1" {
+       		Video url="http://192.168.1.6:8080/video" encoding="mjpeg"
+          }
+		}
+
+	}
+}
+
+

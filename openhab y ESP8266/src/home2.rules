@@ -1,0 +1,43 @@
+import org.openhab.core.library.types.*
+ 
+var HSBType hsbValue
+var int redValue
+var int greenValue
+var int blueValue
+var String RGBvalues
+ 
+rule "Calculo valores RGB"
+   when
+   Item LuzRGB changed
+   then
+   
+   hsbValue = LuzRGB.state as HSBType 
+ 
+   redValue = hsbValue.red.intValue
+   greenValue = hsbValue.green.intValue
+   blueValue = hsbValue.blue.intValue
+ 
+   postUpdate(LuzRGB_R, redValue)
+   postUpdate(LuzRGB_G, greenValue)
+   postUpdate(LuzRGB_B, blueValue)
+ 
+   RGBvalues= "Values" + redValue.toString + ";" + greenValue.toString + ";" + blueValue.toString
+   logInfo( "Luces RGB", RGBvalues )
+ 
+end
+
+
+rule "Luz regulable"
+	when
+		Item DimmedLight received command
+	then
+		var Number percent = 0
+		if(DimmedLight.state instanceof DecimalType) percent = DimmedLight.state as DecimalType 
+			
+		if(receivedCommand==INCREASE) percent = percent + 10
+		if(receivedCommand==DECREASE) percent = percent - 10
+
+		if(percent<0)   percent = 0
+		if(percent>100) percent = 100
+		postUpdate(DimmedLight, percent);
+end

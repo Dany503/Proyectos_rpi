@@ -1,0 +1,14 @@
+sitemap avion label="Avión"
+{
+//Raspberry Pi
+//GPIO
+
+	Frame label="Control de avión con Rasberry Pi GPIO"
+	{
+		Switch item=TP
+		Switch item=TD
+		Switch item=AD
+		Switch item=AI
+	}
+
+}

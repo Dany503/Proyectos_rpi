@@ -1,0 +1,22 @@
+Group All
+ 
+Dimmer DimmedLight"Dimmer [%d %%]"	<slider> { mqtt=">[mosquitto:dev/slid:state:*:default]" }
+
+Color  LuzRGB     "Luces RGB"    <slider> (all)
+Dimmer LuzRGB_R   "Rojo [%d %%]"   <switch> (all) {mqtt=">[mosquitto:dev/RED:state:*:default]"}
+Dimmer LuzRGB_G   "Verde [%d %%]"  <switch> (all) {mqtt=">[mosquitto:dev/GREEN:state:*:default]"}
+Dimmer LuzRGB_B   "Azul [%d %%]"  <switch> (all) {mqtt=">[mosquitto:dev/BLUE:state:*:default]"}
+
+Switch mqttsw3 "LED 3" (all) {mqtt=">[mosquitto:dev/D2:command:*:default]"}
+Switch mqttsw1 "LED 1" (all) {mqtt=">[mosquitto:dev/D0:command:*:default]"}
+Switch mqttsw2 "LED 2" (all) {mqtt=">[mosquitto:dev/D1:command:*:default]"}
+
+Number press "Presión [%.2f hPa]" <barometer> {mqtt="<[mosquitto:dev/press:state:default]"} 
+Number temp "Temperatura [%.2f °C]" <temperature> {mqtt="<[mosquitto:dev/temp:state:default]"}
+
+Number volts "Voltios [%.2f V]" <Volts> {mqtt="<[mosquitto:dev/tension:state:default]"} 
+Number amps "Amperios [%.2f A]" <Amperes> {mqtt="<[mosquitto:dev/corriente:state:default]"}
+Number watts "Presión [%.2f W]" <Power> {mqtt="<[mosquitto:dev/potencia:state:default]"} 
+Number wattshour "Consumo energético [%.2f Wh]" <Energy> {mqtt="<[mosquitto:dev/energia:state:default]"}
+
+Rollershutter servo		"Servo"		(all) {mqtt=">[mosquitto:dev/servo:command:*:default]"}

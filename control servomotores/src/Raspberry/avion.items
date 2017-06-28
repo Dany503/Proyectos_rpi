@@ -1,0 +1,7 @@
+//Raspberry Pi
+//GPIO
+Switch TP "Timon de profundidad" {gpio="pin:4"} //Timon de profundidad
+Switch TD "Timon de dirección" {gpio="pin:17"}	//Timon de direccion
+Switch AD "Aleron derecho" {gpio="pin:27"}	//Aleron derecho
+Switch AI "Aleron izquierdo" {gpio="pin:22"}	//Aleron izquierdo
+
