@@ -1,0 +1,17 @@
+El archivo .py es el que se ejecuta en la RPi,
+y realiza la comunicación con el microcontrolador,
+además de controlar el actuador y las notificaciones 
+de Gmail.
+
+El archivo .ino es lo que está programado en el
+microcontrolador, y lee los sensores además de
+comunicarse con la RPi.
+
+El archivo Makefile se ejecuta también en la RPi
+simultáneamente con el script de Python, en otra
+ventana del terminal.  Se encarga de grabar y del
+streaming por Youtube. Es necesario tener Cmake
+para ejecutarlo directamente, o simplemente basta
+con abrir el archivo, copiar la línea y pegarlo en
+el terminal. La cámara debe estar activada y lista
+para que el comando no dé error.
