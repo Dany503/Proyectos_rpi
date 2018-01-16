@@ -31,7 +31,7 @@ string.punctuation
 
 sense=SenseHat()
 
-bot = telebot.TeleBot("300319576:AAFCsobwQOx2Xbrf2ePAG1PDpxBhk61Xd-Y")
+bot = telebot.TeleBot("xxxxxxx")
 knownUsers = []  # todo: save these in a file,
 
 user_dict = {}
